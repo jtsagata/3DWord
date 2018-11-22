@@ -47,22 +47,22 @@ void init_commands() {
     commands["velocity"] = &velocity_cmd;
 }
 
-bool help_cmd(Simulation &, tokenList) {
+bool help_cmd(Simulation &, tokenList &) {
     std::cout << "HELP:" << std::endl;
     std::cout << "   check on the scripts folder :-)" << std::endl;
     return true;
 }
 
-bool go_cmd(Simulation &s, tokenList) { return s.go(); }
+bool go_cmd(Simulation &s, tokenList &) { return s.go(); }
 
-bool config_cmd(Simulation &s, tokenList) {
+bool config_cmd(Simulation &s, tokenList &) {
     std::cout << "Configuration\n";
     std::cout << "  Vector precision:\t" << Vector3D::print_precision << std::endl;
     std::cout << "  Simulation precision:\t" << s.getPrint_precision() << std::endl;
     return true;
 }
 
-bool status_cmd(Simulation &s, tokenList) {
+bool status_cmd(Simulation &s, tokenList &) {
     std::cout << "Simulation status\n";
     std::cout << "  Time:\t\t" << s.getCurrent_time() << std::endl;
     std::cout << "  Timestep:\t" << s.getTimestep() << std::endl;
@@ -75,7 +75,7 @@ bool status_cmd(Simulation &s, tokenList) {
     return true;
 }
 
-bool set_cmd(Simulation &s, tokenList tokens) {
+bool set_cmd(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 2) {
         std::cerr << "Error: set item value \n";
         return false;
@@ -105,7 +105,7 @@ bool set_cmd(Simulation &s, tokenList tokens) {
     return false;
 }
 
-bool set_cmd_maxSteps(Simulation &s, tokenList tokens) {
+bool set_cmd_maxSteps(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 3) {
         std::cerr << "Error: set maxSteps value\n";
         return false;
@@ -123,7 +123,7 @@ bool set_cmd_maxSteps(Simulation &s, tokenList tokens) {
     return true;
 }
 
-bool set_cmd_precision(Simulation &s, tokenList tokens) {
+bool set_cmd_precision(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 3) {
         std::cerr << "Error: set precision value\n";
         return false;
@@ -142,7 +142,7 @@ bool set_cmd_precision(Simulation &s, tokenList tokens) {
     return true;
 }
 
-bool set_cmd_timestep(Simulation &s, tokenList tokens) {
+bool set_cmd_timestep(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 3) {
         std::cerr << "Error: set timestep value\n";
         return false;
@@ -160,7 +160,7 @@ bool set_cmd_timestep(Simulation &s, tokenList tokens) {
     return true;
 }
 
-bool set_cmd_target(Simulation &s, tokenList tokens) {
+bool set_cmd_target(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 5) {
         std::cerr << "Error: set target X Y Z\n";
         return false;
@@ -181,7 +181,7 @@ bool set_cmd_target(Simulation &s, tokenList tokens) {
 }
 
 // TODO: refactor set_cmd_target and target_cmd
-bool target_cmd(Simulation &s, tokenList tokens) {
+bool target_cmd(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 4) {
         std::cerr << "Error: target X Y Z\n";
         return false;
@@ -201,7 +201,7 @@ bool target_cmd(Simulation &s, tokenList tokens) {
     return true;
 }
 
-bool set_cmd_velocity(Simulation &s, tokenList tokens) {
+bool set_cmd_velocity(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 3) {
         std::cerr << "Error: set velocity value\n";
         return false;
@@ -219,7 +219,7 @@ bool set_cmd_velocity(Simulation &s, tokenList tokens) {
     return true;
 }
 
-bool velocity_cmd(Simulation &s, tokenList tokens) {
+bool velocity_cmd(Simulation &s, tokenList &tokens) {
     if (tokens.size() < 2) {
         std::cerr << "Error:  velocity value\n";
         return false;
