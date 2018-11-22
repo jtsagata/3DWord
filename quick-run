@@ -1,0 +1,31 @@
+#!/bin/bash
+
+BUILD_TOOLCHAIN="-clang-6"
+BUILD_TYPE=${1:-debug}
+
+# Colors
+red=`tput setaf 1`
+green=`tput setaf 2`
+yellow=`tput setaf 3`
+blue=`tput setaf 4`
+magenta=`tput setaf 5`
+cyan=`tput setaf 6`
+white=`tput setaf 7`
+black=`tput setaf 0`
+
+BUILD_DIR="cmake-build-${BUILD_TYPE}${BUILD_TOOLCHAIN}"
+
+pushd ${BUILD_DIR}
+
+# Always keep the code in a good shape
+make 3DWord_clangformat
+
+# Now build it
+make
+SUCESSS=$?
+
+if [ $SUCESSS -eq 0 ]; then
+    ./src/RobotWorld < scripts/simulation1
+fi
+
+popd

@@ -1,0 +1,25 @@
+help
+
+# This is a comment
+set velocity 10.0
+set timestep 0.2
+
+# Set a Target
+set target 10 10 10
+go
+
+# Set a far away target
+set target 100 100 100
+
+status
+config
+
+set maxsteps 200
+set precision 3
+status
+config
+
+# Lets try again
+
+quit
+status
