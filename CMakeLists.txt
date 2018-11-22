@@ -30,5 +30,6 @@ add_custom_target(dist
 
 # Count Lines of code
 add_custom_target(code_stats
-        COMMAND cloc --report-file=${CMAKE_PROJECT_NAME}_stats.txt src
+        COMMAND cloc --report-file=${CMAKE_PROJECT_NAME}_stats.txt src &&
+        sed -i '1d' ${CMAKE_PROJECT_NAME}_stats.txt
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
