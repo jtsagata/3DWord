@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(3DWord VERSION 0.0.1 LANGUAGES CXX)
+project(3DWorld VERSION 0.0.1 LANGUAGES CXX)
 
 
 

@@ -36,7 +36,7 @@ void Simulation::setVelocity(double new_velocity) {
     } else {
         // TODO: Refactor for better error reporting.
         // Why void?
-        std::cerr << "Really? negative? '" <<new_velocity << "' In what universe?.\n";
+        std::cerr << "Really? negative? '" << new_velocity << "' In what universe?.\n";
     }
 }
 

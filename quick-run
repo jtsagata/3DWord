@@ -18,7 +18,7 @@ BUILD_DIR="cmake-build-${BUILD_TYPE}${BUILD_TOOLCHAIN}"
 pushd ${BUILD_DIR}
 
 # Always keep the code in a good shape
-make 3DWord_clangformat
+make 3DWorld_clangformat
 make code_stats
 make dist
 
