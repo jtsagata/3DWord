@@ -11,8 +11,8 @@
 #include <string>
 #include <vector>
 
-typedef std::vector<std::string> tokenList;
-typedef std::map<std::string, std::function<bool(Simulation &, tokenList &)>> cmdMap;
+using tokenList = std::vector<std::string>;
+using cmdMap = std::map<std::string, std::function<bool(Simulation &, tokenList &)>>;
 
 // The commands
 bool help_cmd(Simulation &s, tokenList &tokens);

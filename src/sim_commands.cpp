@@ -8,7 +8,7 @@
 // TODO: Move to a seperate file
 // https://dev.krzaq.cc/post/switch-on-strings-with-c11/
 
-typedef std::uint64_t hash_t;
+using hash_t = std::uint64_t;
 namespace fnv1a_64 {
 
 constexpr hash_t prime = 0x100000001B3ull;
