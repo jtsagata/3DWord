@@ -37,7 +37,6 @@ class Simulation {
     static size_t getMaxSteps();
 
   private:
-
     void print_sim_progress();
 
     Vector3D current_location;
@@ -53,8 +52,6 @@ class Simulation {
     static size_t maxSteps;
 
     static int print_precision;
-
-
 };
 
 #endif // INC_3DWORD_SIMULATION_H

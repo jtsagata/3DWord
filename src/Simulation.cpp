@@ -30,7 +30,7 @@ void Simulation::setLocation(const Vector3D &location) {
 double Simulation::getVelocity() const { return velocity; }
 
 void Simulation::setVelocity(double new_velocity) {
-    if(velocity >0 ) {
+    if (velocity > 0) {
         velocity = new_velocity;
         debug << "* Velocity now is " << velocity << "\n";
     } else {
@@ -104,13 +104,9 @@ const Vector3D &Simulation::getTarget_location() const { return target_location;
 
 size_t Simulation::getMaxSteps() { return maxSteps; }
 
-const Vector3D &Simulation::getVelocity_vector() const {
-    return velocity_vector;
-}
+const Vector3D &Simulation::getVelocity_vector() const { return velocity_vector; }
 
-int Simulation::getPrint_precision() {
-    return print_precision;
-}
+int Simulation::getPrint_precision() { return print_precision; }
 
 void Simulation::setPrint_precision(int print_precision) {
     Simulation::print_precision = print_precision;

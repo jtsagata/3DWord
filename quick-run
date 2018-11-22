@@ -19,6 +19,8 @@ pushd ${BUILD_DIR}
 
 # Always keep the code in a good shape
 make 3DWord_clangformat
+make code_stats
+make dist
 
 # Now build it
 make
