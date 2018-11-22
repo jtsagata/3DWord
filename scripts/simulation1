@@ -2,7 +2,7 @@ help
 
 # This is a comment
 set velocity 10.0
-set timestep 0.2
+set timestep 1
 
 # Set a Target
 set target 10 10 10

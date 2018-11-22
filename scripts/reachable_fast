@@ -1,0 +1,7 @@
+set timestep 1
+velocity 1
+
+target 10 10 10
+
+status
+go

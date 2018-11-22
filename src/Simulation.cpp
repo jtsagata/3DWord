@@ -23,26 +23,26 @@ std::ostream &operator<<(std::ostream &os, Simulation const &sim) {
 const Vector3D &Simulation::getLocation() const { return current_location; }
 
 void Simulation::setLocation(const Vector3D &location) {
-    Simulation::current_location = location;
+    current_location = location;
     debug << "* Location now is " << location << "\n";
 }
 
 double Simulation::getVelocity() const { return velocity; }
 
 void Simulation::setVelocity(double new_velocity) {
-    if (velocity > 0) {
+    if (new_velocity > 0) {
         velocity = new_velocity;
         debug << "* Velocity now is " << velocity << "\n";
     } else {
         // TODO: Refactor for better error reporting.
         // Why void?
-        std::cerr << "Really? negative? In what universe?.\n";
+        std::cerr << "Really? negative? '" <<new_velocity << "' In what universe?.\n";
     }
 }
 
 void Simulation::setTarget(const Vector3D &new_location) {
     target_location = new_location;
-    auto diff = Simulation::target_location - Simulation::current_location;
+    auto diff = target_location - current_location;
     velocity_vector = diff.normal();
     debug << "* Target now is " << target_location << "\n";
     debug << "* Distance is " << diff << "\n";
